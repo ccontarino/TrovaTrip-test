@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
-import { record } from "./services.ts/record.service";
+import { useEffect, useState } from "react";
+import { getRecord, record } from "./services.ts/record.service";
 import { BlobText } from "./helper/BlobText";
 import dynamic from "next/dynamic";
 import Skeleton from "./components/Skeleton/Skeleton";
+import { Record } from "./interfaces/Record";
 
 const DynamicText = dynamic(
   () => import("./components/TextSection/TextSection"),
@@ -14,12 +15,22 @@ const DynamicText = dynamic(
 );
 export default function Home() {
   const [searchText, setSearchText] = useState<string>("");
-  const text = record.text;
-  const blobText = new BlobText(text);
+  const [textService, setTextService] = useState<string>("");
+
+  const blobText = new BlobText(textService);
 
   const onChange = (e: any) => {
     setSearchText(e.target.value);
   };
+
+  const getRecordService = async () => {
+    const response = await getRecord();
+    setTextService(response.text);
+  };
+
+  useEffect(() => {
+    getRecordService();
+  }, []);
 
   return (
     <main className="flex flex-col items-center p-4 justify-between h-full gap-4   ">
