@@ -5,6 +5,7 @@ import { BlobText } from "./helper/BlobText";
 import dynamic from "next/dynamic";
 import Skeleton from "./components/Skeleton/Skeleton";
 import { Record } from "./interfaces/Record";
+import Loading from "./components/Loading/loading";
 
 const DynamicText = dynamic(
   () => import("./components/TextSection/TextSection"),
@@ -42,15 +43,26 @@ export default function Home() {
             className="flex-1 sm:rounded-sm rounded-md text-black"
           />
         </div>
-        <div className="h-full w-full">
-          <div className="flex flex-col w-full h-full">
-            <div className="text-white h-full ">
-              {blobText.getArrayText().map((text, index) => (
-                <DynamicText text={text} key={index} searchWords={searchText} />
-              ))}
+        {textService ? (
+          <div className="h-full w-full">
+            <div className="flex flex-col w-full h-full">
+              <div className="text-white h-full ">
+                {blobText.getArrayText().map((text, index) => (
+                  <DynamicText
+                    text={text}
+                    key={index}
+                    searchWords={searchText}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="h-full flex-col items-center gap-4 flex pt-20 w-full">
+            <Loading height="h-16" width="w-16" />
+            <span>Loading Service...</span>
+          </div>
+        )}
       </div>
     </main>
   );
