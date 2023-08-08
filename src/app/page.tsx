@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { getRecord, record } from "./services.ts/record.service";
+import { getRecord, record } from "./services/record.service";
 import { BlobText } from "./helper/BlobText";
 import dynamic from "next/dynamic";
 import Skeleton from "./components/Skeleton/Skeleton";
