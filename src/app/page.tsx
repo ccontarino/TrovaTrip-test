@@ -1,17 +1,21 @@
 "use client";
 import Image from "next/image";
 import ScrollView from "./components/ScrollView";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { record } from "./services.ts/record.service";
+import { useOnScreen } from "./hooks/UseOnScreen";
 
 export default function Home() {
-  const text =
-    "The world environment is facing numerous challenges, including climate change, deforestation, pollution, and loss of biodiversity. These issues are not only affecting the planet's ecosystems but also human health and well-being. Governments and international organizations are working to address these challenges, such as through the United Nations Framework Convention on Climate Change and the Paris Agreement. However, individual actions are also crucial in protecting the world environment, such as reducing energy consumption, recycling, and supporting sustainable businesses. It is essential to take urgent and collective action to preserve the planet's natural resources and ensure a sustainable future for generations to come";
   const [searchText, setSearchText] = useState([]);
-
+  const text = record.text;
   function searchTextFunction() {
     const regexPattern = new RegExp(`\\b${searchText}\\b`, "i");
     console.log(text.match(regexPattern));
+    return text.match(regexPattern);
   }
+
+  // const elementRef = useRef(null);
+  // const isOnScreen = useOnScreen(elementRef);
 
   useEffect(() => {
     searchTextFunction();
@@ -34,13 +38,15 @@ export default function Home() {
           ></input>
         </div>
         <div className="flex self-start pl-5">
-          <span>Matches: {searchText} </span>
+          <span>Matches: {searchText.length} </span>
           <span className="ml-2 text-xl font-bold"></span>
         </div>
         <div className="h-full w-full  p-6">
           {/* <ScrollView></ScrollView> */}
-          <div className="flex flex-col justify-center w-full break-words">
-            <span className="text-white break-words ">{text}</span>
+          <div className="flex flex-col justify-center w-full h-full break-words">
+            <p className="text-white break-words overflow-scroll ">
+              <span>{text}</span>
+            </p>
           </div>
         </div>
       </div>
