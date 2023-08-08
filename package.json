@@ -2,6 +2,14 @@
   "name": "trovatrip",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccontarino/TrovaTrip-test"
+  },
+  "homepage": "https://github.com/ccontarino/TrovaTrip-test/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/ccontarino/TrovaTrip-test/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
