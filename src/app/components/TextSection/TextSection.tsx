@@ -1,5 +1,5 @@
 "use client";
-import useIntersectionObserver from "@/app/hooks/UseOnScreen";
+import useIntersectionObserver from "@/app/hooks/useIntersectionObserver";
 import React, { useEffect, useRef } from "react";
 
 interface TextSectionProps {
