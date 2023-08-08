@@ -1,0 +1,13 @@
+import React from "react";
+
+function ScrollView() {
+  return (
+    <div className="flex flex-col justify-center w-full break-words">
+      <span className="text-white break-words ">
+        asdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfasasdsdadassaafsdaddfas
+      </span>
+    </div>
+  );
+}
+
+export default ScrollView;
