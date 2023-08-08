@@ -1,6 +1,6 @@
 export class BlobText {
   private text: string;
-  limit: number = 1000;
+  private limit: number = 1000;
 
   constructor(text: string, limit?: number) {
     this.limit = limit || this.limit;
