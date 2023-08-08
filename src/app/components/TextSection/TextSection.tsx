@@ -1,6 +1,7 @@
 "use client";
+
 import useIntersectionObserver from "@/app/hooks/useIntersectionObserver";
-import React, { useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef } from "react";
 
 interface TextSectionProps {
   text: string;
@@ -33,4 +34,4 @@ function TextSection({ text, searchWords = "" }: TextSectionProps) {
   );
 }
 
-export default TextSection;
+export default memo(TextSection);
