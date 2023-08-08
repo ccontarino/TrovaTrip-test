@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { record } from "./services.ts/record.service";
 import { BlobText } from "./helper/BlobText";
-// import TextSection from "./components/TextSection/TextSection";
 import dynamic from "next/dynamic";
 import Skeleton from "./components/Skeleton/Skeleton";
 
