@@ -40,7 +40,7 @@ export default function Home() {
           <input
             onChange={onChange}
             className="flex-1 sm:rounded-sm rounded-md text-black"
-          ></input>
+          />
         </div>
         <div className="h-full w-full">
           <div className="flex flex-col w-full h-full">
