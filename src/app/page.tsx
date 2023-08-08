@@ -17,15 +17,17 @@ export default function Home() {
   const text = record.text;
   const blobText = new BlobText(text);
 
+  const onChange = (e: any) => {
+    setSearchText(e.target.value);
+  };
+
   return (
     <main className="flex flex-col items-center p-4 justify-between h-full gap-4   ">
       <div className="flex flex-col items-center w-full md:w-[600px] h-full  gap-4">
         <div className="flex gap-5 md:gap-20 ">
           <p className="flex-1 text-xl md:text-xl font-bold ">Search Text</p>
           <input
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
+            onChange={onChange}
             className="flex-1 sm:rounded-sm rounded-md text-black"
           ></input>
         </div>

@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  poweredByHeader: false,
+  compress: true,
+  compiler: {
+    reactRemoveProperties: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
