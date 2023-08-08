@@ -5,7 +5,7 @@ import { BlobText } from "./helper/BlobText";
 import dynamic from "next/dynamic";
 import Skeleton from "./components/Skeleton/Skeleton";
 import { Record } from "./interfaces/Record";
-import Loading from "./components/Loading/loading";
+import Loading from "./components/Loading/Loading";
 
 const DynamicText = dynamic(
   () => import("./components/TextSection/TextSection"),
